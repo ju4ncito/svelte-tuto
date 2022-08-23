@@ -1,1 +1,6 @@
-<h1>asas</h1>
+<script>
+  import Header from "./design/Header.svelte";
+  const color = "light";
+</script>
+
+<Header {color} />
