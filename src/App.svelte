@@ -2,6 +2,9 @@
   import Header from "./design/Header.svelte";
   import CardGrid from "./posts/CardGrid.svelte";
   const color = "light";
+  let titulo = "";
+  let imagen = "";
+  let descripcion = "";
   let post = [
     {
       id: "1",
@@ -25,10 +28,28 @@
         "https://cdn.pixabay.com/photo/2016/11/29/03/17/action-1867014_960_720.jpg",
     },
   ];
+
+  function agregarPost() {
+    const nuevoPost = {
+      id: Math.random().toString(),
+      titulo: titulo,
+      descripcion: descripcion,
+      imagen: imagen,
+    };
+
+    post = [nuevoPost, ...post]; ///spread operator, convierte un array en serie de argumentos injectable
+  }
 </script>
 
 <Header {color} />
 
 <div class="container">
   <CardGrid {post} />
+
+  <form on:submit|preventDefault={agregarPost}>
+    <!-- <input type="text" placeholder="Titulo" bind:value={titulo} />
+    <input type="text" placeholder="Titulo" bind:value={descripcion} />
+    <input type="text" placeholder="Titulo" bind:value={imagen} />
+    <button type="submit" class="btn btn-info">Guardar</button> -->
+  </form>
 </div>

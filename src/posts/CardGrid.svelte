@@ -5,7 +5,7 @@
 
 <div class="row mt-3">
   {#each post as cards}
-    <div class="col sm">
+    <div class="col-sm-4">
       <Card
         titulo={cards.titulo}
         descripcion={cards.descripcion}
