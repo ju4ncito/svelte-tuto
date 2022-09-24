@@ -1,6 +1,7 @@
 <script>
   import Header from "./design/Header.svelte";
   import CardGrid from "./posts/CardGrid.svelte";
+  import InputCustom from "./design/InputCustom.svelte";
   const color = "light";
   let titulo = "";
   let imagen = "";
@@ -51,5 +52,34 @@
     <input type="text" placeholder="Titulo" bind:value={descripcion} />
     <input type="text" placeholder="Titulo" bind:value={imagen} />
     <button type="submit" class="btn btn-info">Guardar</button> -->
+
+    <InputCustom
+      type="text"
+      nombre="Titulo"
+      id="titulo"
+      placeholder="Titulo"
+      value={titulo}
+      on:input={(event) => (titulo = event.target.value)}
+    />
+
+    <InputCustom
+      type="text"
+      nombre="Imagen"
+      id="imagen"
+      placeholder="Imagen"
+      value={imagen}
+      on:input={(event) => (imagen = event.target.value)}
+    />
+
+    <InputCustom
+      control="textarea"
+      nombre="Descripcion"
+      id="descripcion"
+      placeholder="Descripcion"
+      value={descripcion}
+      on:input={(event) => (descripcion = event.target.value)}
+    />
+
+    <button type="submit" class="btn btn-info">Guardar</button>
   </form>
 </div>

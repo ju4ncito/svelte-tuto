@@ -9,6 +9,7 @@
 </script>
 
 <div class="form-group">
+  <!-- svelte-ignore a11y-label-has-associated-control -->
   <label {id}>{nombre}</label>
   {#if control === "textarea"}
     <textarea

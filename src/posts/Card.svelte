@@ -1,7 +1,17 @@
 <script>
+  import { createEventDispatcher } from "svelte";
+  const dispatch = createEventDispatcher();
   export let titulo;
   export let descripcion;
   export let imagen;
+
+  function ver() {
+    dispatch("ver-mas");
+  }
+
+  function favorito() {
+    dispatch("favorito");
+  }
 </script>
 
 <div class="card" style="width: 18res;">
@@ -9,6 +19,7 @@
   <div class="card-body">
     <h5 class="card-title">{titulo}</h5>
     <p class="card-text">{descripcion}</p>
-    <button class="btn btn-primary">Ver mas...</button>
+    <button on:click={ver} class="btn btn-primary">Ver mas...</button>
+    <button on:click={favorito} class="btn btn-danger">favo...</button>
   </div>
 </div>
