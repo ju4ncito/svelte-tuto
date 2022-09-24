@@ -6,11 +6,11 @@
   export let imagen;
 
   function ver() {
-    dispatch("ver-mas");
+    dispatch("ver-mas", { id: 123 });
   }
 
   function favorito() {
-    dispatch("favorito");
+    dispatch("favorito", "hopla como estas");
   }
 </script>
 

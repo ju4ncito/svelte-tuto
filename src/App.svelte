@@ -2,6 +2,7 @@
   import Header from "./design/Header.svelte";
   import CardGrid from "./posts/CardGrid.svelte";
   import InputCustom from "./design/InputCustom.svelte";
+  import Jumbotron from "./design/Jumbotron.svelte";
   const color = "light";
   let titulo = "";
   let imagen = "";
@@ -45,6 +46,9 @@
 <Header {color} />
 
 <div class="container">
+  <Jumbotron nombre="miscomponentes">
+    <h3>anashley</h3>
+  </Jumbotron>
   <CardGrid {post} />
 
   <form on:submit|preventDefault={agregarPost}>

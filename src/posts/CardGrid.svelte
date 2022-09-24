@@ -2,11 +2,16 @@
   import Card from "./Card.svelte";
   export let post;
 
-  function verMas() {
+  let evento = "asd";
+  function verMas(e) {
     alert("vermasinfo");
+    console.log(e);
+    evento = e.detail.id;
   }
-  function favorito() {
+  function favorito(event) {
     alert("anashley");
+    console.log(event);
+    evento = event.detail;
   }
 </script>
 
@@ -18,8 +23,10 @@
         descripcion={cards.descripcion}
         imagen={cards.imagen}
         on:ver-mas={verMas}
-        on:favorito={verMas}
+        on:favorito={favorito}
       />
     </div>
   {/each}
 </div>
+
+<h2>{evento}</h2>
