@@ -47,7 +47,8 @@
 
 <div class="container">
   <Jumbotron nombre="miscomponentes">
-    <h3>anashley</h3>
+    <span slot="subtitulo">holaaa</span>
+    <p slot="parrafo">PARRAFO</p>
   </Jumbotron>
   <CardGrid {post} />
 
