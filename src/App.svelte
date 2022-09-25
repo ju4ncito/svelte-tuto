@@ -46,10 +46,20 @@
 <Header {color} />
 
 <div class="container">
-  <Jumbotron nombre="miscomponentes">
+  <Jumbotron nombre="miscomponentes" let:mostrar>
     <span slot="subtitulo">holaaa</span>
     <p slot="parrafo">PARRAFO</p>
+
+    <div class:mostrar>
+      {#if mostrar}
+        <hr />
+        <button class="btn btn-danger"> btono</button>
+      {:else}
+        <h2>coloca el mouse encima</h2>
+      {/if}
+    </div>
   </Jumbotron>
+
   <CardGrid {post} />
 
   <form on:submit|preventDefault={agregarPost}>

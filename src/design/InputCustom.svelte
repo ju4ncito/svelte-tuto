@@ -1,8 +1,8 @@
 <script>
-  export let control;
+  export let control = "textarea";
   export let value;
   export let placeholder;
-  export let type;
+  export let type = "text";
   export let nombre;
   export let id;
   ///variables necesarias
