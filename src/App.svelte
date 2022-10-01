@@ -1,6 +1,13 @@
 <script>
-  import Router from "svelte-spa-router";
+  import Router from "svelte-spa-router"; //siempre se importa solo
+  import { link, push } from "svelte-spa-router";
   import routes from "./routes.js";
+
+  function pagina() {
+    push("/acerca/45");
+  }
+
+  let nombre = "juancito";
 </script>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -19,20 +26,18 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <!-- svelte-ignore a11y-missing-attribute -->
-        <a class="nav-link">Inicio </a>
+        <a class="nav-link" href="/" use:link>Inicio </a>
       </li>
       <li class="nav-item">
-        <!-- svelte-ignore a11y-missing-attribute -->
-        <a class="nav-link">Acerca de</a>
+        <a class="nav-link" href="/acerca/123/{nombre}" use:link>Acerca de</a>
       </li>
       <li class="nav-item">
-        <!-- svelte-ignore a11y-missing-attribute -->
-        <a class="nav-link">Contactos</a>
+        <a class="nav-link" href="/contactos" use:link>Contactos</a>
       </li>
       <li class="nav-item" />
     </ul>
   </div>
 </nav>
 
+<button class="btn btn-warning" on:click={pagina}>acerca de</button>
 <Router {routes} />

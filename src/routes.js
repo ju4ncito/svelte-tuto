@@ -5,7 +5,7 @@ import Errorpag from "./rutas/Error.svelte";
 
 const routes = {
   "/": Inicio,
-  "/acerca": Acerca,
+  "/acerca/:id/:nombre?": Acerca,
   "/contactos": Contactos,
   "*": Errorpag,
 };
