@@ -1,13 +1,11 @@
-import Inicio from "./rutas/Inicio.svelte";
-import Contactos from "./rutas/Contactos.svelte";
-import Acerca from "./rutas/Acerca.svelte";
-import Errorpag from "./rutas/Error.svelte";
+import Inicio from "./Paginas/Inicio.svelte";
+import Pelicula from "./Paginas/Pelicula.svelte";
+import ErrorRuta from "./Paginas/ErrorRuta.svelte";
 
 const routes = {
   "/": Inicio,
-  "/acerca/:id/:nombre?": Acerca,
-  "/contactos": Contactos,
-  "*": Errorpag,
+  "/pelicula/:id": Pelicula,
+  "*": ErrorRuta,
 };
 
 export default routes;
