@@ -1,4 +1,5 @@
 <script>
+  import Cargador from "../Componentes/Cargador.svelte";
   const url =
     "https://api.themoviedb.org/3/movie/popular?api_key=8a5a696b9d894af5405fd6e22982b6d6&language=en-US&page=1";
 
@@ -19,7 +20,7 @@
 <h1>Peliculas mas populares del momento</h1>
 
 {#await promise}
-  <p>cargador</p>
+  <div align="center"><Cargador /></div>
 {:then peliculas}
   {#each peliculas as item}
     <li>Titulo: {item.title}</li>
