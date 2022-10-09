@@ -1,5 +1,6 @@
 <script>
   import Cargador from "../Componentes/Cargador.svelte";
+  import Grid from "../Componentes/Grid.svelte";
   const url =
     "https://api.themoviedb.org/3/movie/popular?api_key=8a5a696b9d894af5405fd6e22982b6d6&language=en-US&page=1";
 
@@ -22,11 +23,7 @@
 {#await promise}
   <div align="center"><Cargador /></div>
 {:then peliculas}
-  {#each peliculas as item}
-    <li>Titulo: {item.title}</li>
-    <li>Popularidad: {item.popularity}</li>
-    <br />
-  {/each}
+  <Grid {peliculas} />
 {:catch error}
   <p style="color:red;">{error}</p>
 {/await}
